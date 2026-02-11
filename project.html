@@ -1,0 +1,644 @@
+<html>
+<head>
+    <title>e-commerce</title>
+    <link rel="icon" href="./asserts/shopping-basket-logo-icon-free-vector.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        .container {
+            display: grid;
+            grid-template-columns: auto 1fr 2fr auto;
+            align-items: center;
+            gap: 1rem;
+            padding: 18px 20px;
+            background-color: #f8f7f7;
+            font-family: poppins;
+            text-transform: capitalize;
+        }
+
+        .logo img {
+            display: block;
+        }
+
+        .nav {
+            display: flex;
+            gap: 70px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .link {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+
+        }
+
+        .item {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 0.5rem 0;
+            margin: 0;
+            min-width: 120px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .dropdown-menu li {
+            padding: 0;
+
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown-menu a:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        .item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .search input {
+            width: 600px;
+            border: none;
+            padding: 12px;
+            border-radius: 14px;
+            color: #7db2eb;
+            border-top: 1px solid #6b98dc;
+
+        }
+
+        .search button {
+            border: none;
+            background-color: #ffffff;
+            padding: 10px;
+            background: none;
+            cursor: pointer;
+        }
+
+        .cart {
+            width: 100px;
+            padding: 10px;
+            margin-left: 20px;
+        }
+
+        .cart img {
+            width: 30px;
+
+        }
+
+        .main {
+            font-family: poppins;
+            text-transform: capitalize;
+            color: #001e60;
+        }
+
+        .container1 {
+            margin-top: 5px;
+            padding: 5px;
+            position: relative;
+            width: 100%;
+        }
+
+        .row {
+            padding: 5px;
+            margin: 5px;
+            gap: 10px;
+        }
+
+        .row .box1,
+        .box2 {
+            border: none;
+            outline: none;
+            border-radius: 7px;
+        }
+
+        .row .box1 {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+
+        }
+
+        .row .box1 h5 {
+            margin-top: 4px;
+            padding-left: 10px;
+            font-size: 15px;
+        }
+
+        .row .box1 button {
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 15px;
+            border: none;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+       
+
+        .row .box1 h2 {
+            padding-left: 10px;
+            padding-bottom: 10px;
+
+        }
+
+        .row .box1 img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            object-fit: fill;
+        }
+
+        .row .box2 {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .row .box2 img {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            object-fit: fill;
+        }
+
+        .container1 .row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+
+
+        .container1 .row1 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                'box1 box2 box2  box3'
+                'box1 box4 box5 box3';
+            gap: 10px;
+        }
+
+        .row1 .box1 {
+            grid-area: box1;
+            outline: none;
+            border-radius: 7px;
+            border: none;
+        }
+
+        .row1 .box2 {
+            grid-area: box2;
+            outline: none;
+            border-radius: 7px;
+            border: none;
+        }
+
+        .row1 .box3 {
+            grid-area: box3;
+            outline: none;
+            border-radius: 7px;
+            border: none;
+        }
+
+        .row1 .box4 {
+            grid-area: box4;
+            outline: none;
+            border-radius: 7px;
+            border: none;
+        }
+
+        .row1 .box5 {
+            grid-area: box5;
+            outline: none;
+            border-radius: 7px;
+            border: none;
+        }
+
+        .row1 {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .row1 .box1 {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .row1 .box1 img {
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            object-fit: fill;
+        }
+
+        .row1 .box1 h5 {
+            margin-top: 4px;
+            padding-left: 10px;
+            font-size: 15px;
+        }
+
+        .row1 .box1 h2 {
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        .row1 .box1 button {
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: 400;
+            border: none;
+            margin-left: 15px;
+            margin-top: 100px;
+            background-color: rgb(7, 31, 172);
+            cursor: pointer;
+
+        }
+    
+
+        .row1 .box2 {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+
+        }
+
+        .row1 .box2 img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        .row1 .box2 h5 {
+            margin-top: 4px;
+            padding-left: 10px;
+            font-size: 15px;
+        }
+
+        .row1 .box2 h2 {
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        .row1 .box2 a {
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+
+        .row1 .box3 {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .row1 .box3 img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .row1 .box3 h5 {
+            margin-top: 4px;
+            padding-left: 10px;
+            font-size: 15px;
+        }
+
+        .row1 .box3 h2 {
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        .row1 .box3 a {
+            margin-left: 10px;
+            display: flex;
+            position: relative;
+            top: 100px;
+            left: 29px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #e0ddf1;
+        }
+
+        .row1 .box4 {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .row1 .box4 img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            object-fit: cover;
+
+        }
+
+        .row1 .box4 h5 {
+            margin-top: 4px;
+            padding-left: 10px;
+            font-size: 15px;
+        }
+
+        .row1 .box4 a {
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #f52c2c;
+        }
+
+        .row1 .box5 {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .row1 .box5 img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .row1 .box5 h2 {
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        .row1 .box5 button {
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: 400;
+            border: none;
+            margin-left: 15px;
+            background-color: rgb(7, 31, 172);
+            cursor: pointer;
+
+        }
+        .main2 {
+            font-family: poppins;
+        }
+
+        .container2 {
+            margin-bottom: 40px;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        .container2 h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .row3 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 14px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #d32f2f;
+            margin-bottom: 8px;
+        }
+
+        .product-name{
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+   
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="container">
+
+                <div class="logo">
+                    <img src="./asserts/bag-heart-fill.svg" alt="logo" width="50px" height="35px">
+                </div>
+
+                <ul class="nav">
+                    <li class="item">
+                        <a class="link" href="#">
+                            <span>pickup or delivery</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">pickup</a></li>
+                            <li><a href="#" class="dropdown-item">delivery</a></li>
+                            <li><a href="#" class="dropdown-item">return</a></li>
+                        </ul>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="#">
+                            <span>❤️</span>
+                            <span>reorder</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="link" href="#">
+                            <span>👷</span>
+                            <span>sign-in</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="search">
+                    <input type="search">
+                    <button class="btn" type="button"><img src="./asserts/search.svg" alt=""></button>
+                </div>
+
+                <div class="cart">
+                    <a href="#"><img src="./asserts/shopping-cart.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- // -->
+    
+    <div class="main">
+        <div class="container1">
+            <div class="row">
+                <div class="box1">
+                    <h5>what you need to stay warm</h5>
+                    <h2>cold-weather styles from $12</h2>
+                    <button type="button">shop now</button>
+                    <img src="./asserts/20260208_102229.png" alt="">
+                </div>
+                <div class="box2">
+                    <img src="./asserts/20260208_102412.png" alt="">
+                </div>
+            </div>
+            <div class="row1">
+                <div class="box1">
+                    <h5>One pay CashRewards Card</h5>
+                    <h2>Earn 3% cash back at Shopy</h2>
+                    <button type="button">learn more</button>
+                    <img src="./asserts/20260208_085701.png" alt="">
+                </div>
+                <div class="box2">
+                    <h5>All you need to feel better, fast</h5>
+                    <h2>Meds & more in 1 easy delivery</h2>
+                    <a>Get started</a>
+                    <img src="./asserts/20260208_085618.png" alt="">
+                </div>
+                <div class="box3">
+                    <h5>self-care delivered</h5>
+                    <h2>Relax & rest in as fast as 1 hour*</h2>
+                    <a>shop now</a>
+                    <img src="./asserts/20260208_090438.png" alt="">
+                </div>
+                <div class="box4">
+                    <h5>Trusted tax filling services</h5>
+                    <a href="#">learn more</a>
+                    <img src="./asserts/20260208_090143.png" alt="">
+
+                </div>
+                <div class="box5">
+                    <h2>now offering mattress accident plans</h2>
+                    <button type="button">shop now</button>
+                    <img src="./asserts/20260208_085815.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="main2">
+        <div class="container2">
+            <h2>Everything Valentine's</h2>
+            <div class="row3">
+                <div class="card">
+                    <img src="./asserts/20260208_190655.png" alt="Valentine product">
+                    <div class="price">$12.98</div>
+                    <div class="product-name">Valentine's Day Pajamas</div>
+                </div>
+                <div class="card">
+                    <img src="./asserts/20260208_191216.png" alt="Fragrance">
+                    <div class="price">$9.88</div>
+                    <div class="product-name">Sabrina Carpenter Fragrance</div>
+                </div>
+                <div class="card">
+                    <img src="./asserts/large_fa9e3c88-5028-47c2-bb3e-342c8a35ff1f.jpeg" alt="Blender">
+                    <div class="price">$37.64</div>
+                    <div class="product-name">Personal Blender Set</div>
+                </div>
+                <div class="card">
+                    <img src="./asserts/cfa30b67c37711755ef90f0153d75b20.png" alt="Spiderman Heart">
+                    <div class="price">$1.24</div>
+                    <div class="product-name">Marvel Spiderman Heart</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container2">
+            <h2>Arts & crafts</h2>
+            <div class="row3">
+                <div class="card">
+                    <img src="./asserts/string.jpg" alt="Star Lights">
+                    <div class="price">Clearance $19.99</div>
+                    <div class="product-name">Joyfy 3-Pack String Lights</div>
+                </div>
+                <div class="card">
+                    <img src="./asserts/pngtree-heart-shaped-valentines-day-gift-box-on-old-vintage-wooden-plates-png-image_11418977.png" alt="Wooden Box">
+                    <div class="price">$6.54</div>
+                    <div class="product-name">DIY Wooden Heart Box</div>
+                </div>
+                <div class="card">
+                    <img src="./asserts/dismond dotz.jpg" alt="Mosaic Art">
+                    <div class="price">$11.28</div>
+                    <div class="product-name">Diamond Dotz Mosaic</div>
+                </div>
+                <div class="card">
+                    <img src="./asserts/hello.jpg" alt="Felt Embellishments">
+                    <div class="price">$3.37</div>
+                    <div class="product-name">Hello Hobby Felt Pack</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
