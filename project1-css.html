@@ -1,0 +1,355 @@
+<html>
+
+<head>
+    <title>Juice-shop</title>
+    <link rel="icon" href="./asserts/3075926.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            font-family: "Playwrite NZ Basic", cursive;
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-size: 18px;
+            background-image: linear-gradient(135deg, #cbd8df 40%, #9cded6 60%);
+        }
+
+        .head {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 60px;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: row;
+            gap: 18px;
+            list-style: none;
+            margin: 0;
+            margin-right: 18px;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+        .nav a {
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            color: orangered;
+        }
+
+        .menu-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .menu-card img {
+            width: 500px;
+            height: 500px;
+            opacity: 0.9;
+        }
+
+        .details {
+            position: absolute;
+            left: 200px;
+            top: 160px;
+        }
+        .details li{
+            list-style: none;
+        }
+
+        .details a{
+            text-decoration: none;
+            color:white;
+        }
+
+        .details a {
+            font-size: 20px;
+            color: rgb(227, 216, 216);
+            font-weight: 500;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .details a:hover {
+            color: orange;
+            cursor: pointer;
+            font-size: 28px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: center;
+            margin-top: 30px;
+            font-size: 22px;
+            word-spacing: 5px;
+            line-height: 37px;
+        }
+
+        .specific-fruits li {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 40px;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        .specific-fruits img {
+            width: 500px;
+            height: auto;
+        }
+
+        .specific-fruits span {
+            margin-top: 100px;
+            font-size: 26px;
+            padding: 10px;
+            line-height: 37px;
+        }
+
+        .specific-fruits h4 {
+            font-size: 30px;
+            color: red;
+            margin: 0;
+            margin-top: 20px;
+            
+        }
+        .specific-fruits h4:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .specific-fruits p {
+            font-size: 30px;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="./asserts/free-png-juice-orange-juice-icon-png-50-px-1600.png" alt="juice icon" width="46px"
+                height="46px">
+            <span>Juice shop</span>
+        </div>
+        <ul class="nav">
+            <li><a href="#">menu</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#cont">contact</a></li>
+        </ul>
+    </div>
+
+    <div class="body">
+        <div class="menu-card">
+            <img src="./asserts/590685.png" alt="Strawberry-img">
+            <ul class="details">
+                <li><a href="#orange">Orange Juice</a></li>
+                <li><a href="#Pomegranate">Pomegranate Juice</a></li>
+                <li><a href="#Strawberry">Strawberry juice</a></li>
+                <li><a href="#Coconut">Coconut Water</a></li>
+                <li><a href="#Grape">Grape Juice</a></li>
+                <li><a href="#Lime">Lime Juice</a></li>
+            </ul>
+            <div class="content">
+                <p>Drinking juice is an easy way to get some nutrients from fruits and vegetables into your diet. But
+                    not all juices are good for you.The healthiest juices contain 100% juice and provide vitamins,
+                    minerals, and/or antioxidants.Some of the most nutrient-rich juices to buy at the supermarket
+                    include pomegranate.Drinking juice can be an easy way to get important nutrients into your daily
+                    diet. But drinks that many people call “juice” are actually “juice product,” not juice. This means
+                    that the beverage contains juice — but isn’t entirely juice. It may have other added ingredients,
+                    like sugar, and/or food additives.High in vitamins and minerals: The specific vitamins and minerals
+                    will vary depending on the type of juice. But the healthiest juice to drink is one that’s high in at
+                    least one vitamin and/or mineral.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fruits">
+        <ul class="specific-fruits">
+            <li id="orange">
+                <img src="./asserts/1eee9c908038f1673976d0ace7de7511.png" alt="fruits">
+                <span>Orange juice is higher in sugar than other juices. But it can still be good for you.
+                    Oranges are known for their high vitamin C content. A cup of orange juice provides 124 mg, which is
+                    equal to 138% of your daily needs. Vitamin C, an antioxidant, plays several important roles in the
+                    body, including:
+                    Regulating the body’s natural inflammatory response
+                    Protecting cells from damage caused by free radicals
+                    Building collagen, which helps keep joints and skin healthy
+                </span>
+            </li>
+
+            <h4>Orange Juice</h4>
+            <p>Juice Shop: ~₹60–₹90 (300 ml glass)</p>
+
+            <li id="Pomegranate">
+                <span>Pomegranate juice is unique because it’s made from the seeds (arils) of the fruit rather than the
+                    fruit itself. These juicy seeds contain plant compounds called phytochemicals that have antioxidant
+                    and anti-inflammatory properties. Research suggests that pomegranate juice and extracts from the
+                    fruit.Lower blood pressure Reduce the risk of diabetes Reduce cancerous tumor growth
+                </span>
+                <img src="./asserts/1-2-pomegranate-free-png-image.png" alt="fruits image">
+
+            </li>
+
+            <h4>Pomegranate Juice</h4>
+            <p>Juice Shop: ~₹120–₹180 (300 ml glass)</p>
+
+            <li id="Strawberry">
+                <img src="./asserts/45-strawberry-png-images.png" alt="fruits">
+                <span>Strawberry juice is valued for being both refreshing and nutritious. It’s a rich source of vitamin
+                    C, which helps strengthen the immune system, supports collagen production for healthy skin, and
+                    improves iron absorption in the body. The natural antioxidants found in strawberries, especially
+                    anthocyanins, help protect cells from oxidative stress and may reduce inflammation, which is
+                    beneficial for overall health and heart function. Because strawberries contain a high amount of
+                    water, their juice also helps with hydration and can feel especially revitalizing in warm
+                    weather.
+                </span>
+
+            </li>
+
+            <h4>Strawberry Juice</h4>
+            <p>Juice Shop: ~₹120–₹180 (300 ml glass) — fresh juice</p>
+
+            <li id="Coconut">
+                <span>Coconut water is especially valued for hydration, as it helps replenish fluids and electrolytes
+                    lost through sweating. Coconut flesh and milk support digestive health due to their fiber content
+                    and may help promote a feeling of fullness. The natural antioxidants in coconut help protect the
+                    body from cell damage, while its antimicrobial properties can support immune health. When consumed
+                    in moderation, coconut can be a nourishing addition to a balanced diet, supporting energy levels,
+                    heart health, and overall well-being.
+                </span>
+                 <img src="./asserts/153430-fresh-coconut-green-photos-png-download-free.png" alt="fruits">
+
+            </li>
+
+            <h4>Coconut Water</h4>
+            <p>Fresh Tender Coconut: ~₹120–₹180 (served in coconut / glass)</p>
+
+            <li id="Grape">
+                <img src="./asserts/grape.png" alt="fruits">
+                <span>Grape juice is known for its rich nutritional value and protective health benefits. It contains
+                    powerful antioxidants, especially flavonoids and resveratrol, which help protect cells from damage
+                    and may reduce inflammation in the body. These compounds are strongly linked to heart health, as
+                    they can support healthy blood circulation and help reduce the risk of cardiovascular problems.
+                    Grape juice is also a good source of vitamin C and vitamin K, which contribute to immune function
+                    and proper blood clotting.
+                </span>
+
+            </li>
+            <h4>Grape Juice</h4>
+            <p>Juice Shop: ~₹80–₹120 (300 ml glass)</p>
+
+            <li id="Lime">
+                <span>Lime juice is valued for its refreshing taste and wide range of health benefits. It is rich in
+                    vitamin C, which helps strengthen the immune system, supports collagen production, and promotes
+                    healthy skin. The antioxidants in lime juice help protect the body from free-radical damage and may
+                    reduce inflammation, contributing to overall wellness.Lime juice also supports digestion by
+                    stimulating digestive enzymes and can help prevent
+                    constipation when mixed with water
+                </span>
+                <img src="./asserts/pngimg.com - lime_PNG14.png" alt="fruits">
+
+            </li>
+            <h4>Lime Juice</h4>
+            <p>Juice Shop: ~₹40–₹70 (200–250 ml glass)</p>
+        </ul>
+    </div>
+    <style>
+        .footer{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+            margin-top: 100px;
+
+        }
+        .logo1{
+             display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo1 span{
+            font-size: 60px;
+        }
+        .address{
+            margin-top: 100px;
+            margin-right: 40px;
+        }
+        .address label{
+            display: block;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .address input{
+            border-color: white;
+            outline: none;
+            background-color: rgb(207, 202, 202);
+            color: rgb(124, 112, 112);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .address button{
+            padding: 8px;
+            border-radius: 6px;
+            background-color: red;
+            color: whitesmoke;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .address ul{
+            list-style: none;
+            font-size: 25px;
+            letter-spacing: 2px;
+        }
+
+    </style>
+    <div class="footer" id="cont">
+         <div class="logo1">
+            <img src="./asserts/free-png-juice-orange-juice-icon-png-50-px-1600.png" alt="juice icon" width="46px"
+                height="46px">
+            <span>Juice shop</span>
+        </div>
+        <div class="address">
+            <label for="email1">Join Us</label>
+            <input type="email" placeholder="email" id="email1" >
+            <button>join</button>
+            <ul>
+                <li>bangalore</li>
+                <li>osur</li>
+                <li>chennai</li>
+                <li>salem</li>
+                <li>pondicherry</li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
